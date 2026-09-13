@@ -19,13 +19,19 @@
     "baseUrl": ".",
     "paths": {
       "@pages": ["src/pages"],
+      "@pages/*": ["src/pages/*"],
       "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
       "@ui": ["src/components/ui"],
+      "@ui/*": ["src/components/ui/*"],
       "@ui-pages": ["src/components/ui/pages"],
+      "@ui-pages/*": ["src/components/ui/pages/*"],
       "@utils-types": ["src/utils/types"],
       "@api": ["src/utils/burger-api.ts"],
       "@slices": ["src/services/slices"],
-      "@selectors": ["src/services/selectors"]
+      "@slices/*": ["src/services/slices/*"],
+      "@selectors": ["src/services/selectors"],
+      "@selectors/*": ["src/services/selectors/*"]
     }
   },
   "include": ["src"]
