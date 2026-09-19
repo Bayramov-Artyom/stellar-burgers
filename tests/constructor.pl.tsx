@@ -3,9 +3,6 @@ import { test, expect, Page } from '@playwright/test';
 const BUN_NAME = 'Краторная булка N-200i';
 const MAIN_NAME = 'Биокотлета из марсианской Магнолии';
 const SAUCE_NAME = 'Соус Spicy-X';
-// Углеводы соуса Spicy-X = 40. Это значение УНИКАЛЬНО в модальном окне.
-// (Калории = 30 и Белки = 30 дублируются, из-за чего Playwright strict mode
-// падал с ошибкой "resolved to 2 elements")
 const SAUCE_CARBS = '40';
 const ORDER_NUMBER = '12345';
 
@@ -190,8 +187,6 @@ test.describe('Создание заказа', () => {
 
     await page.goto('/');
     await expect(page.getByText(BUN_NAME)).toBeVisible();
-    // ждём, пока авторизация по фейковым токенам подтянет имя пользователя в шапку —
-    // это гарантирует, что isAuthenticated уже true и клик по «Оформить заказ» не уйдёт на /login
     await expect(page.getByText('Test User')).toBeVisible();
   });
 
